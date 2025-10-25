@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Download, ArrowRight } from "lucide-react";
-import profileImage from "@assets/generated_images/Professional_developer_headshot_portrait_93ebe59c.png";
+import profileImage from "@assets/generated_images/Professional_developer_headshot.png";
 
 interface HeroProps {
   name: string;

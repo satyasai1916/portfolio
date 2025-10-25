@@ -20,43 +20,43 @@ export class MemStorage implements IStorage {
     
     // Initialize portfolio data with professional sample content
     this.portfolioData = {
-      name: "Alex Morgan",
-      title: "Full-Stack Developer & UI/UX Enthusiast",
-      introduction: "Passionate developer with expertise in building modern web applications. I specialize in creating intuitive user experiences backed by robust, scalable architectures. Always eager to learn new technologies and solve complex problems.",
-      email: "alex.morgan@example.com",
-      linkedinUrl: "https://linkedin.com/in/alexmorgan",
-      githubUrl: "https://github.com/alexmorgan",
+      name: "Satya Yallavula",
+      title:"Backend Developer, Gen - AI applications",
+      introduction: "Passionate developer with expertise in building robust customer experience applications. I specialize in developing and contributing to scalable architectures. Always eager to learn new technologies and solve complex problems.",
+      email: "yvssai@gmail.com",
+      linkedinUrl: "https://www.linkedin.com/in/venkata-satya-sai-yallavula-bb64821b1/",
+      githubUrl: "https://github.com/satyasai1916",
       projects: [
         {
           id: "1",
           title: "E-Commerce Platform",
           description: "A full-featured e-commerce solution with real-time inventory management, secure payment processing, and an intuitive admin dashboard. Built to handle high traffic and scale seamlessly.",
           techStack: ["React", "Node.js", "PostgreSQL", "Stripe", "Redis"],
-          githubUrl: "https://github.com/alexmorgan/ecommerce-platform",
-          demoUrl: "https://demo-ecommerce.example.com",
+          githubUrl: "",
+          demoUrl: "",
         },
         {
           id: "2",
           title: "Task Management App",
           description: "Collaborative project management tool with real-time updates, drag-and-drop kanban boards, team chat, and comprehensive analytics. Designed for remote teams.",
           techStack: ["TypeScript", "Next.js", "Prisma", "WebSockets", "Tailwind CSS"],
-          githubUrl: "https://github.com/alexmorgan/task-manager",
-          demoUrl: "https://tasks.example.com",
+          githubUrl: "",
+          demoUrl: "",
         },
         {
           id: "3",
           title: "Weather Forecast Dashboard",
           description: "Beautiful weather application featuring 7-day forecasts, interactive maps, severe weather alerts, and location-based recommendations. Clean UI with smooth animations.",
           techStack: ["React", "TypeScript", "OpenWeather API", "Recharts", "Framer Motion"],
-          githubUrl: "https://github.com/alexmorgan/weather-app",
-          demoUrl: "https://weather.example.com",
+          githubUrl: "",
+          demoUrl: "",
         },
         {
           id: "4",
           title: "AI Chat Assistant",
           description: "Intelligent chatbot powered by machine learning for customer support automation. Features context-aware responses, sentiment analysis, and multi-language support.",
           techStack: ["Python", "FastAPI", "OpenAI", "React", "Docker"],
-          githubUrl: "https://github.com/alexmorgan/ai-chatbot",
+          githubUrl: "",
         },
       ],
       skillCategories: [
@@ -80,9 +80,9 @@ export class MemStorage implements IStorage {
       experiences: [
         {
           id: "1",
-          company: "TechCorp Solutions",
+          company: "Rakuten Mobile Inc",
           role: "Senior Full-Stack Developer",
-          duration: "Jan 2022 - Present",
+          duration: "April 2025 - Present",
           responsibilities: [
             "Led development of a microservices architecture serving 100K+ daily active users, improving system reliability by 40%",
             "Mentored junior developers and conducted code reviews, establishing best practices that reduced bug reports by 30%",
@@ -90,9 +90,9 @@ export class MemStorage implements IStorage {
         },
         {
           id: "2",
-          company: "StartupLabs Inc",
-          role: "Full-Stack Developer",
-          duration: "Jun 2020 - Dec 2021",
+          company: "Rakuten Mobile Inc",
+          role: "Software Engineer",
+          duration: "March 2024 - April 2025",
           responsibilities: [
             "Built and deployed 5+ customer-facing web applications using React, Node.js, and PostgreSQL",
             "Optimized database queries and implemented caching strategies, reducing page load times by 60%",
@@ -100,12 +100,12 @@ export class MemStorage implements IStorage {
         },
         {
           id: "3",
-          company: "Digital Innovations",
-          role: "Junior Developer",
-          duration: "Aug 2018 - May 2020",
+          company: "Fiserv",
+          role: "Summer Intern",
+          duration: "May 2022 - June 2022",
           responsibilities: [
             "Developed responsive frontend components and integrated RESTful APIs for various client projects",
-            "Collaborated with designers to implement pixel-perfect UI designs and ensure cross-browser compatibility",
+            "Collaorated with designers to implement pixel-perfect UI designs and ensure cross-browser compatibility",
           ],
         },
       ],
