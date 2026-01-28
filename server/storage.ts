@@ -61,31 +61,28 @@ export class MemStorage implements IStorage {
         },
       ],
       skillCategories: [
-        {
-          category: "Frontend",
-          skills: ["React", "TypeScript", "Next.js", "Vue.js", "Tailwind CSS", "Redux", "HTML/CSS", "Responsive Design"],
-        },
+
         {
           category: "Backend",
-          skills: ["Node.js", "Express", "Python", "FastAPI", "PostgreSQL", "MongoDB", "REST APIs", "GraphQL"],
+          skills: ["Node.js", "Express", "Python", "FastAPI", "PostgreSQL", "MongoDB", "REST APIs","Django"],
         },
         {
           category: "DevOps & Tools",
-          skills: ["Git", "Docker", "AWS", "CI/CD", "Linux", "Nginx", "Jest", "Webpack"],
+          skills: ["Git", "Docker", "Infra", "CI/CD", "Linux", "Kubernetes"],
         },
         {
           category: "Other",
-          skills: ["Agile/Scrum", "UI/UX Design", "System Design", "Performance Optimization"],
+          skills: ["Agile/Scrum", "Low Level Design", "System Design", "Performance Optimization"],
         },
       ],
       experiences: [
         {
           id: "1",
           company: "Rakuten Mobile Inc",
-          role: "Senior Full-Stack Developer",
+          role: "Still a Software Engineer",
           duration: "April 2025 - Present",
           responsibilities: [
-            "Led development of a microservices architecture serving 100K+ daily active users, improving system reliability by 40%",
+            "Led development of a microservices architecture serving 100K+ daily active users, improving system reliability and scaled it upto 50k cells",
             "Mentored junior developers and conducted code reviews, establishing best practices that reduced bug reports by 30%",
           ],
         },
@@ -95,7 +92,7 @@ export class MemStorage implements IStorage {
           role: "Software Engineer",
           duration: "March 2024 - April 2025",
           responsibilities: [
-            "Built and deployed 5+ customer-facing web applications using React, Node.js, and PostgreSQL",
+            "Built and deployed customer-facing web applications using React, Node.js, and PostgreSQL",
             "Optimized database queries and implemented caching strategies, reducing page load times by 60%",
           ],
         },
@@ -105,7 +102,7 @@ export class MemStorage implements IStorage {
           role: "Summer Intern",
           duration: "May 2022 - June 2022",
           responsibilities: [
-            "Developed responsive frontend components and integrated RESTful APIs for various client projects",
+    
             "Collaorated with designers to implement pixel-perfect UI designs and ensure cross-browser compatibility",
           ],
         },
@@ -131,7 +128,7 @@ export class MemStorage implements IStorage {
           id: "1",
           slug: "micro-frontends-scalable-web-apps",
           title: "Micro-frontends: A Game-Changer for Scalable Web Apps",
-          publication: "Developer Insights",
+          publication: "- Satya Yallavula",
           date: "January 15, 2024",
           imageUrl: "https://via.placeholder.com/800x400?text=Micro-frontends",
           tags: ["Architecture", "Frontend", "Scalability"],
@@ -162,7 +159,7 @@ Micro-frontends represent a powerful architectural pattern for organizations loo
           id: "2",
           slug: "deep-dive-rust-high-performance-backends",
           title: "A Deep Dive into Rust for High-Performance Backends",
-          publication: "Tech Forward",
+          publication: "- Satya Yallavula",
           date: "October 28, 2023",
           imageUrl: "https://via.placeholder.com/800x400?text=Rust+Backend",
           tags: ["Rust", "Backend", "Performance", "Systems Programming"],
