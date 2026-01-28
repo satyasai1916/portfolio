@@ -45,7 +45,7 @@ const BlogPost: FC<BlogPostProps> = ({ params }) => {
   return (
     <div className="min-h-screen flex flex-col">
       <Navigation />
-      <main className="flex-grow container mx-auto px-4 py-8 max-w-3xl">
+      <main className="flex-grow container mx-auto px-4 pt-24 pb-8 max-w-3xl">
         {blogPost.imageUrl && (
           <img src={blogPost.imageUrl} alt={blogPost.title} className="w-full h-64 object-cover rounded-lg mb-8" />
         )}

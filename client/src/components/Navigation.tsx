@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import { useLocation, Link } from "wouter"; // Import useLocation and Link
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [location, setLocation] = useLocation(); // Get current location and setter
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,17 +16,26 @@ export default function Navigation() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-      setIsMobileMenuOpen(false);
+  const handleNavLinkClick = (sectionId: string) => {
+    setIsMobileMenuOpen(false); // Close mobile menu on click
+
+    // If not on the homepage, navigate to homepage first
+    if (location !== "/") {
+      setLocation(`/#${sectionId}`); // Navigate to home with hash
+    } else {
+      // If already on homepage, just scroll
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
     }
   };
 
   const navLinks = [
     { id: "home", label: "Home" },
+    { id: "patents", label: "Patents" }, // New
     { id: "projects", label: "Projects" },
+    { id: "blogs", label: "Blogs" }, // New
     { id: "skills", label: "Skills" },
     { id: "experience", label: "Experience" },
     { id: "contact", label: "Contact" },
@@ -40,7 +51,7 @@ export default function Navigation() {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <button
-            onClick={() => scrollToSection("home")}
+            onClick={() => handleNavLinkClick("home")} // Use new handler
             className="text-xl md:text-2xl font-bold text-foreground hover-elevate active-elevate-2 rounded-md px-2 py-1"
             data-testid="link-logo"
           >
@@ -53,7 +64,7 @@ export default function Navigation() {
               <Button
                 key={link.id}
                 variant="ghost"
-                onClick={() => scrollToSection(link.id)}
+                onClick={() => handleNavLinkClick(link.id)} // Use new handler
                 data-testid={`link-nav-${link.id}`}
                 className="text-base font-medium"
               >
@@ -82,7 +93,7 @@ export default function Navigation() {
             {navLinks.map((link) => (
               <button
                 key={link.id}
-                onClick={() => scrollToSection(link.id)}
+                onClick={() => handleNavLinkClick(link.id)} // Use new handler
                 className="block w-full text-left px-4 py-3 rounded-lg text-base font-medium hover-elevate active-elevate-2"
                 data-testid={`link-mobile-${link.id}`}
               >
