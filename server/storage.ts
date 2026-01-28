@@ -1,4 +1,4 @@
-import { type User, type InsertUser, type PortfolioData } from "@shared/schema";
+import { type User, type InsertUser, type PortfolioData, type Blog } from "@shared/schema";
 import { randomUUID } from "crypto";
 
 // modify the interface with any CRUD methods
@@ -9,6 +9,7 @@ export interface IStorage {
   getUserByUsername(username: string): Promise<User | undefined>;
   createUser(user: InsertUser): Promise<User>;
   getPortfolioData(): Promise<PortfolioData>;
+  getBlogPostBySlug(slug: string): Promise<Blog | undefined>;
 }
 
 export class MemStorage implements IStorage {
@@ -21,18 +22,18 @@ export class MemStorage implements IStorage {
     // Initialize portfolio data with professional sample content
     this.portfolioData = {
       name: "Satya Yallavula",
-      title:"Backend Developer, Gen - AI applications",
-      introduction: "Passionate developer with expertise in building robust customer experience applications. I specialize in developing and contributing to scalable architectures. Always eager to learn new technologies and solve complex problems.",
-      email: "yvssai@gmail.com",
+      title:"Software engineer",
+      introduction: "Passionate developer with expertise in building robust scalable applications. I specialize in developing backend focused applications and contributing to scalable architectures. Always eager to learn new technologies and solve complex problems.",
+      email: "yvssai04@gmail.com",
       linkedinUrl: "https://www.linkedin.com/in/venkata-satya-sai-yallavula-bb64821b1/",
       githubUrl: "https://github.com/satyasai1916",
       projects: [
         {
           id: "1",
-          title: "E-Commerce Platform",
-          description: "A full-featured e-commerce solution with real-time inventory management, secure payment processing, and an intuitive admin dashboard. Built to handle high traffic and scale seamlessly.",
+          title: "Note Taking Application",
+          description: " This was my first Full Stack project teaching me CRUD, A full-featured note-taking application with real-time synchronization, markdown support, and a clean UI. .",
           techStack: ["React", "Node.js", "PostgreSQL", "Stripe", "Redis"],
-          githubUrl: "",
+          githubUrl: "https://github.com/satyasai1916/agile-notes",
           demoUrl: "",
         },
         {
@@ -109,6 +110,90 @@ export class MemStorage implements IStorage {
           ],
         },
       ],
+      patents: [
+        {
+          id: "1",
+          title: "System and Method for Real-Time Data Synchronization",
+          applicationNumber: "US 2023/012345 A1",
+          status: "Pending",
+          url: "https://patents.google.com/patent/US2023012345A1",
+        },
+        {
+          id: "2",
+          title: "Decentralized Identity Verification",
+          applicationNumber: "WO 2022/054321 A1",
+          status: "Issued",
+          url: "https://patents.google.com/patent/WO2022054321A1",
+        },
+      ],
+      blogs: [
+        {
+          id: "1",
+          slug: "micro-frontends-scalable-web-apps",
+          title: "Micro-frontends: A Game-Changer for Scalable Web Apps",
+          publication: "Developer Insights",
+          date: "January 15, 2024",
+          imageUrl: "https://via.placeholder.com/800x400?text=Micro-frontends",
+          tags: ["Architecture", "Frontend", "Scalability"],
+          content: `
+# Micro-frontends: A Game-Changer for Scalable Web Apps
+
+## Introduction
+In today's fast-paced development landscape, building large and complex web applications can be challenging. Monolithic frontends often lead to slower development cycles, difficulties in scaling, and integration headaches. This is where the micro-frontend architecture comes into play, offering a revolutionary approach to building scalable and maintainable web applications.
+
+## What are Micro-frontends?
+Inspired by microservices, micro-frontends break down a monolithic frontend into smaller, independent, and loosely coupled applications. Each micro-frontend is typically owned by a separate team, can be developed using different technologies, and deployed independently. This paradigm shift allows teams to work autonomously, reducing dependencies and accelerating delivery.
+
+## Benefits of Micro-frontends
+- **Independent Development & Deployment**: Teams can develop, test, and deploy their parts of the application without affecting others.
+- **Technology Agnostic**: Different micro-frontends can use different frameworks (e.g., React, Angular, Vue), allowing teams to choose the best tool for the job.
+- **Improved Scalability**: Individual parts of the application can be scaled independently, optimizing resource usage.
+- **Easier Maintenance**: Smaller codebases are easier to understand, maintain, and refactor.
+- **Resilience**: A failure in one micro-frontend is less likely to bring down the entire application.
+
+## Challenges
+While micro-frontends offer many advantages, they also come with challenges such as increased operational complexity, consistent styling across different teams, and data sharing between micro-frontends. Careful planning and robust infrastructure are crucial for successful implementation.
+
+## Conclusion
+Micro-frontends represent a powerful architectural pattern for organizations looking to build resilient, scalable, and maintainable web applications. By empowering autonomous teams and fostering technology diversity, they pave the way for faster innovation and improved developer experience.
+  `,
+        },
+        {
+          id: "2",
+          slug: "deep-dive-rust-high-performance-backends",
+          title: "A Deep Dive into Rust for High-Performance Backends",
+          publication: "Tech Forward",
+          date: "October 28, 2023",
+          imageUrl: "https://via.placeholder.com/800x400?text=Rust+Backend",
+          tags: ["Rust", "Backend", "Performance", "Systems Programming"],
+          content: `
+# A Deep Dive into Rust for High-Performance Backends
+
+## Why Rust for Backends?
+Rust has rapidly gained traction as a language of choice for systems programming, and increasingly, for high-performance backend services. Its unique combination of memory safety without garbage collection, concurrency without data races, and exceptional performance makes it an ideal candidate for building robust and efficient server-side applications.
+
+## Key Features Benefiting Backend Development
+- **Memory Safety**: Rust's borrow checker eliminates entire classes of bugs (like null pointer dereferences and data races) at compile time, leading to more reliable servers.
+- **Performance**: Close to C++ performance, Rust is perfect for services requiring low latency and high throughput.
+- **Concurrency**: Rust's ownership model and type system makes concurrent programming safer and easier to reason about, preventing common pitfalls.
+- **Strong Type System**: Catches errors early in the development cycle, improving code quality and reducing debugging time.
+- **Growing Ecosystem**: While newer than other languages, Rust's ecosystem for web development (e.g., Axum, Actix-web, Tokio) is rapidly maturing.
+
+## Use Cases
+Rust excels in areas where performance and reliability are paramount, such as:
+- **API Gateways**: Handling a massive number of requests efficiently.
+- **Microservices**: Building lightweight, performant, and reliable services.
+- **Game Servers**: Providing low-latency communication and complex logic.
+- **Data Processing**: Building fast and memory-efficient data pipelines.
+
+## Getting Started with Rust Backends
+The journey to building a Rust backend often starts with understanding its core concepts like ownership, borrowing, and lifetimes. Frameworks like Actix-web and Axum provide powerful tools for building asynchronous web applications, while Tokio offers a robust runtime for concurrent operations.
+
+## Conclusion
+Rust offers a compelling proposition for backend development, especially for projects demanding high performance, security, and reliability. Its steep learning curve is often outweighed by the benefits of developing software that is robust, efficient, and a joy to maintain once the initial hurdles are overcome.
+  `,
+        },
+      ],
     };
   }
 
@@ -131,6 +216,10 @@ export class MemStorage implements IStorage {
 
   async getPortfolioData(): Promise<PortfolioData> {
     return this.portfolioData;
+  }
+
+  async getBlogPostBySlug(slug: string): Promise<Blog | undefined> {
+    return this.portfolioData.blogs.find((blog) => blog.slug === slug);
   }
 }
 

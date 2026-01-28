@@ -2,6 +2,8 @@ import { useQuery } from "@tanstack/react-query";
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import Projects from "@/components/Projects";
+import Patents from "@/components/Patents";
+import Blogs from "@/components/Blogs";
 import Skills from "@/components/Skills";
 import ExperienceSection from "@/components/Experience";
 import Contact from "@/components/Contact";
@@ -46,7 +48,11 @@ export default function Portfolio() {
           introduction={portfolioData.introduction}
         />
         
+        <Patents patents={portfolioData.patents} />
+        
         <Projects projects={portfolioData.projects} />
+
+        <Blogs blogs={portfolioData.blogs} />
         
         <Skills skillCategories={portfolioData.skillCategories} />
         
