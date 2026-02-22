@@ -23,7 +23,7 @@ export class MemStorage implements IStorage {
     this.portfolioData = {
       name: "Satya Yallavula",
       title:"Software engineer",
-      introduction: "Passionate developer with expertise in building robust scalable applications. I specialize in developing backend focused applications and contributing to scalable architectures. Always eager to learn new technologies and solve complex problems.",
+      introduction: "Software developer with expertise in building and scaling high throughput applications. I specialize in designing and contributing to distributed systems and architectures. Always eager to learn new technologies and solve complex problems.I love to convert Business problems into software solutions by directly interacting with stakeholders because that's what I do best. Experience in docker , k8s environments and debugging production incidents",
       email: "yvssai04@gmail.com",
       linkedinUrl: "https://www.linkedin.com/in/venkata-satya-sai-yallavula-bb64821b1/",
       githubUrl: "https://github.com/satyasai1916",
@@ -47,8 +47,8 @@ export class MemStorage implements IStorage {
         {
           id: "3",
           title: "As a Machine Learning Enthusiast",
-          description: "Beautiful weather application featuring 7-day forecasts, interactive maps, severe weather alerts, and location-based recommendations. Clean UI with smooth animations.",
-          techStack: ["React", "TypeScript", "OpenWeather API", "Recharts", "Framer Motion"],
+          description: "A personal project to show my ML skills where I used LSTM Model to predict the stock prices using google stock data.",
+          techStack: ["Python", "TensorFlow", "Pandas", "NumPy"],
           githubUrl: "",
           demoUrl: "",
         },
@@ -82,8 +82,8 @@ export class MemStorage implements IStorage {
           role: "Still a Software Engineer",
           duration: "April 2025 - Present",
           responsibilities: [
-            "Led development of a microservices architecture serving 100K+ daily active users, improving system reliability and scaled it upto 50k cells",
-            "Mentored junior developers and conducted code reviews, establishing best practices that reduced bug reports by 30%",
+            "Led development of a application from scratch that included multiple microservices serving 100K+ daily active users, improving system reliability and scaled it upto 50k cells",
+            "Mentored junior developers, peers and conducted code reviews, establishing best practices in a new team and fostering a culture of continuous learning and improvement",
           ],
         },
         {
@@ -103,94 +103,224 @@ export class MemStorage implements IStorage {
           duration: "May 2022 - June 2022",
           responsibilities: [
     
-            "Collaorated with designers to implement pixel-perfect UI designs and ensure cross-browser compatibility",
+            "Just python automations and stuff",
           ],
         },
       ],
       patents: [
         {
           id: "1",
-          title: "System and Method for Real-Time Data Synchronization",
-          applicationNumber: "US 2023/012345 A1",
-          status: "Pending",
-          url: "https://patents.google.com/patent/US2023012345A1",
+          title: "Explainability Framework for Analyzing Mobile Subscriber Data Usage Reduction Due to Location-Based Network Coverage Variations",
+          applicationNumber: "US ---",
+          status: "Under Review",
         },
-        {
-          id: "2",
-          title: "Decentralized Identity Verification",
-          applicationNumber: "WO 2022/054321 A1",
-          status: "Issued",
-          url: "https://patents.google.com/patent/WO2022054321A1",
-        },
+
       ],
-      blogs: [
-        {
-          id: "1",
-          slug: "micro-frontends-scalable-web-apps",
-          title: "Micro-frontends: A Game-Changer for Scalable Web Apps",
-          publication: "- Satya Yallavula",
-          date: "January 15, 2024",
-          imageUrl: "https://via.placeholder.com/800x400?text=Micro-frontends",
-          tags: ["Architecture", "Frontend", "Scalability"],
-          content: `
-# Micro-frontends: A Game-Changer for Scalable Web Apps
+     
+  blogs: [
+    {
+      id: "1",
+      slug: "kubernetes-beyond-basics-production-lessons",
+      title: "Kubernetes Beyond the Basics: Production Lessons from Running Real Systems",
+      publication: "- Satya Yallavula",
+      date: "June 25, 2025",
+      imageUrl: "https://via.placeholder.com/800x400?text=Kubernetes+Production",
+      tags: ["Kubernetes", "DevOps", "Distributed Systems", "Scalability"],
+      content: `
+# Kubernetes Beyond the Basics: Production Lessons from Running Real Systems
 
 ## Introduction
-In today's fast-paced development landscape, building large and complex web applications can be challenging. Monolithic frontends often lead to slower development cycles, difficulties in scaling, and integration headaches. This is where the micro-frontend architecture comes into play, offering a revolutionary approach to building scalable and maintainable web applications.
+Kubernetes looks simple in demos — deploy a container, scale replicas, expose a service. But production reality is very different. When traffic spikes, pods crash, nodes die, and deployments go wrong, you truly understand distributed systems.
 
-## What are Micro-frontends?
-Inspired by microservices, micro-frontends break down a monolithic frontend into smaller, independent, and loosely coupled applications. Each micro-frontend is typically owned by a separate team, can be developed using different technologies, and deployed independently. This paradigm shift allows teams to work autonomously, reducing dependencies and accelerating delivery.
+Here are lessons from running Kubernetes clusters serving real production workloads.
 
-## Benefits of Micro-frontends
-- **Independent Development & Deployment**: Teams can develop, test, and deploy their parts of the application without affecting others.
-- **Technology Agnostic**: Different micro-frontends can use different frameworks (e.g., React, Angular, Vue), allowing teams to choose the best tool for the job.
-- **Improved Scalability**: Individual parts of the application can be scaled independently, optimizing resource usage.
-- **Easier Maintenance**: Smaller codebases are easier to understand, maintain, and refactor.
-- **Resilience**: A failure in one micro-frontend is less likely to bring down the entire application.
+## Real Production Scenario
 
-## Challenges
-While micro-frontends offer many advantages, they also come with challenges such as increased operational complexity, consistent styling across different teams, and data sharing between micro-frontends. Careful planning and robust infrastructure are crucial for successful implementation.
+In one of our backend systems, we had an API service handling ~20k requests per minute during peak hours. Initially, everything worked well — until we pushed a version with an unoptimized database query.
 
-## Conclusion
-Micro-frontends represent a powerful architectural pattern for organizations looking to build resilient, scalable, and maintainable web applications. By empowering autonomous teams and fostering technology diversity, they pave the way for faster innovation and improved developer experience.
-  `,
-        },
-        {
-          id: "2",
-          slug: "deep-dive-rust-high-performance-backends",
-          title: "A Deep Dive into Rust for High-Performance Backends",
-          publication: "- Satya Yallavula",
-          date: "October 28, 2023",
-          imageUrl: "https://via.placeholder.com/800x400?text=Rust+Backend",
-          tags: ["Rust", "Backend", "Performance", "Systems Programming"],
-          content: `
-# A Deep Dive into Rust for High-Performance Backends
+CPU spiked.
+Pods started restarting.
+HPA kept scaling replicas.
+Database connections got exhausted.
 
-## Why Rust for Backends?
-Rust has rapidly gained traction as a language of choice for systems programming, and increasingly, for high-performance backend services. Its unique combination of memory safety without garbage collection, concurrency without data races, and exceptional performance makes it an ideal candidate for building robust and efficient server-side applications.
+Instead of solving the problem, autoscaling amplified it.
 
-## Key Features Benefiting Backend Development
-- **Memory Safety**: Rust's borrow checker eliminates entire classes of bugs (like null pointer dereferences and data races) at compile time, leading to more reliable servers.
-- **Performance**: Close to C++ performance, Rust is perfect for services requiring low latency and high throughput.
-- **Concurrency**: Rust's ownership model and type system makes concurrent programming safer and easier to reason about, preventing common pitfalls.
-- **Strong Type System**: Catches errors early in the development cycle, improving code quality and reducing debugging time.
-- **Growing Ecosystem**: While newer than other languages, Rust's ecosystem for web development (e.g., Axum, Actix-web, Tokio) is rapidly maturing.
+### What We Learned
 
-## Use Cases
-Rust excels in areas where performance and reliability are paramount, such as:
-- **API Gateways**: Handling a massive number of requests efficiently.
-- **Microservices**: Building lightweight, performant, and reliable services.
-- **Game Servers**: Providing low-latency communication and complex logic.
-- **Data Processing**: Building fast and memory-efficient data pipelines.
+- Horizontal Pod Autoscaler cannot fix bad application logic.
+- Resource limits must be tuned carefully.
+- Liveness and readiness probes must reflect real health — not just “container is running”.
+- Pod disruption budgets protect availability during node upgrades.
 
-## Getting Started with Rust Backends
-The journey to building a Rust backend often starts with understanding its core concepts like ownership, borrowing, and lifetimes. Frameworks like Actix-web and Axum provide powerful tools for building asynchronous web applications, while Tokio offers a robust runtime for concurrent operations.
+## Designing for Resilience
+
+We improved the system by:
+
+- Adding connection pooling limits.
+- Introducing circuit breakers at the application layer.
+- Using rolling updates with maxUnavailable=0 for zero downtime.
+- Implementing proper resource requests to prevent noisy neighbor issues.
+
+## Observability Matters
+
+We added:
+- Request latency percentiles (p95, p99)
+- Error rate alerts tied to SLOs
+- Pod restart monitoring
+- Node-level memory pressure alerts
+
+Once observability improved, debugging became predictable instead of chaotic.
 
 ## Conclusion
-Rust offers a compelling proposition for backend development, especially for projects demanding high performance, security, and reliability. Its steep learning curve is often outweighed by the benefits of developing software that is robust, efficient, and a joy to maintain once the initial hurdles are overcome.
-  `,
-        },
-      ],
+
+Kubernetes is not just container orchestration — it's distributed systems management at scale. Production stability comes from understanding failure modes, not just YAML configuration.
+      `,
+    },
+    {
+      id: "2",
+      slug: "building-ml-models-for-production-systems",
+      title: "Building ML Models for Production: Beyond Jupyter Notebooks",
+      publication: "- Satya Yallavula",
+      date: "October 28, 2025",
+      imageUrl: "https://via.placeholder.com/800x400?text=ML+Production",
+      tags: ["Machine Learning", "MLOps", "Distributed Systems", "Backend"],
+      content: `
+# Building ML Models for Production: Beyond Jupyter Notebooks
+
+## Introduction
+Training a machine learning model is the easy part. Making it reliable in production is where engineering begins.
+
+Production ML systems must handle latency constraints, model drift, scaling challenges, and monitoring — just like any distributed service.
+
+## Real Production Scenario
+
+We built a demand forecasting model to predict traffic patterns for an internal analytics platform.
+
+The model performed well offline with high accuracy. But once deployed:
+
+- Predictions were slow under concurrent requests.
+- Feature mismatches occurred due to schema changes.
+- Data distribution shifted after a seasonal campaign.
+
+Accuracy dropped significantly.
+
+## What Changed in Production
+
+We introduced:
+
+- A dedicated model serving layer with autoscaling.
+- Feature validation at ingestion time.
+- Versioned models with rollback capability.
+- Shadow testing before full rollout.
+
+We also added monitoring for:
+- Prediction latency
+- Drift detection
+- Confidence score anomalies
+
+## Key Lessons
+
+- Training and serving environments must be identical.
+- Latency budgets matter more than small accuracy gains.
+- Model monitoring is as important as application monitoring.
+- Retraining pipelines must be automated.
+
+## Conclusion
+
+ML in production is not about algorithms — it's about reliability, observability, and lifecycle management. A slightly less accurate model that is stable and scalable is often more valuable than a fragile high-accuracy one.
+      `,
+    },
+    {
+      id: "3",
+      slug: "designing-distributed-systems-at-scale",
+      title: "Designing Distributed Systems at Scale: Lessons from Production",
+      publication: "- Satya Yallavula",
+      date: "February 10, 2026",
+      imageUrl: "https://via.placeholder.com/800x400?text=Distributed+Systems",
+      tags: ["Distributed Systems", "Scalability", "Architecture", "Backend"],
+      content: `
+# Designing Distributed Systems at Scale: Lessons from Production
+
+## Real Production Scenario
+
+We operated a microservices-based backend handling user analytics events from multiple regions.
+
+At peak traffic (~50k events/sec), we faced:
+
+- Message broker lag
+- Consumer crashes due to memory spikes
+- Partial data inconsistency between services
+
+A single slow consumer created backlog that cascaded across downstream services.
+
+## What We Improved
+
+- Implemented backpressure mechanisms.
+- Partitioned traffic intelligently.
+- Made all consumers idempotent.
+- Introduced dead-letter queues for poison messages.
+- Applied rate limiting at ingestion points.
+
+We also shifted certain workflows from synchronous calls to asynchronous event-driven processing to reduce tight coupling.
+
+## Scalability and Trade-offs
+
+We accepted eventual consistency for analytics data to maintain availability. Strict consistency would have reduced throughput significantly.
+
+## Conclusion
+
+Distributed systems fail in subtle ways — rarely through total crashes, but through slow degradation. Designing for graceful failure and recovery is the real mark of production maturity.
+      `,
+    },
+    {
+      id: "4",
+      slug: "event-driven-architecture-with-message-brokers",
+      title: "Event-Driven Architecture: Building Reliable Systems with Message Brokers",
+      publication: "- Satya Yallavula",
+      date: "February 18, 2026",
+      imageUrl: "https://via.placeholder.com/800x400?text=Event-Driven+Architecture",
+      tags: ["Event-Driven Architecture", "Kafka", "Scalability", "Microservices"],
+      content: `
+# Event-Driven Architecture: Building Reliable Systems with Message Brokers
+
+## Real Production Scenario
+
+We migrated a tightly coupled payment-processing workflow into an event-driven architecture.
+
+Previously:
+- Checkout service directly called payment, notification, and analytics services.
+- A slow dependency increased user-facing latency.
+- Failures cascaded easily.
+
+After migration:
+- Checkout emitted an event.
+- Downstream services consumed independently.
+- Failures in analytics no longer affected user checkout flow.
+
+## Challenges We Faced
+
+- Handling duplicate events.
+- Ensuring proper partition key strategy.
+- Monitoring consumer lag.
+- Managing schema evolution without breaking consumers.
+
+We implemented:
+- Idempotent consumers.
+- Schema versioning.
+- Lag-based autoscaling.
+- Dead-letter topics for failed events.
+
+## Key Takeaway
+
+Event-driven systems increase resilience but require strong operational maturity. Observability and disciplined event contracts are essential.
+
+## Conclusion
+
+When applied thoughtfully, event-driven architecture allows systems to scale independently, tolerate failures gracefully, and evolve without constant coordination between teams.
+      `,
+    },
+  ],
+
     };
   }
 
