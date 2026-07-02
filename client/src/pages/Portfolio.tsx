@@ -45,6 +45,7 @@ export default function Portfolio() {
         <Hero
           name={portfolioData.name}
           title={portfolioData.title}
+          strengths={portfolioData.strengths}
           introduction={portfolioData.introduction}
         />
         

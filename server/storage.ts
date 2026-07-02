@@ -22,7 +22,8 @@ export class MemStorage implements IStorage {
     // Initialize portfolio data with professional sample content
     this.portfolioData = {
       name: "Satya Yallavula",
-      title: "Software Engineer (BBB grade)",
+      title: "Software Engineer",
+      strengths: ["Product", "AI", "Backend", "Scalability"],
       introduction: "Software developer with expertise in building and scaling high-throughput applications. I specialize in designing and contributing to distributed systems and architectures. Always eager to learn new technologies and solve complex problems. I love converting business problems into software solutions by directly interacting with stakeholders — that's what I do best. Experience in Docker, K8s environments, and debugging production incidents.",
       email: "yvssai04@gmail.com",
       linkedinUrl: "https://www.linkedin.com/in/venkata-satya-sai-yallavula-bb64821b1/",
@@ -98,8 +99,9 @@ export class MemStorage implements IStorage {
           role: "Software Engineer (BBB grade)",
           duration: "June 2026 - Present",
           responsibilities: [
-            "Recently promoted — taking on broader ownership across distributed systems and mentoring peers on production best practices",
-            "Leading development of microservice-based applications serving 100K+ daily active users, improving system reliability at scale",
+            "Promoted to BBB grade — own the full product lifecycle from design and planning through development, testing, and acting on customer feedback for telecom optimization platforms at 100K+ cells serving 10M+ subscribers",
+            "Drive technical direction and cross-team alignment as a product-minded engineer, balancing reliability, subscriber experience, and delivery across distributed systems",
+            "Mentor peers on production best practices and lead initiatives that scale network optimization with measurable impact on customer experience",
           ],
         },
         {
@@ -108,8 +110,9 @@ export class MemStorage implements IStorage {
           role: "Software Engineer",
           duration: "April 2025 - June 2026",
           responsibilities: [
-            "Shifted focus from big data engineering pipelines to building and scaling microservice architectures from scratch",
-            "Led a greenfield application with multiple microservices, scaling to 50K+ cells and mentoring junior developers on code quality",
+            "Designed and shipped distributed optimization platforms integrated with highly reliable telecom systems — optimizing network performance across 1K+ cells and improving experience for 100K+ subscribers",
+            "Shifted from big data engineering to building and scaling microservice architectures from scratch, leading a greenfield application with multiple services",
+            "Built and deployed microservices powering distributed optimization platforms, from service design through production rollout on Kubernetes",
           ],
         },
         {
@@ -118,8 +121,8 @@ export class MemStorage implements IStorage {
           role: "Software Engineer",
           duration: "March 2024 - April 2025",
           responsibilities: [
-            "Built and deployed customer-facing web applications using React, Node.js, and PostgreSQL",
-            "Worked on big data engineering pipelines and optimized database queries, reducing page load times by 60%",
+            "Built ETL pipelines processing terabytes of telecom data, leveraging columnar databases including BigQuery and ClickHouse for high-throughput analytics",
+            "Developed RAG-based agents for internal knowledge retrieval and automation across large-scale datasets",
           ],
         },
         {

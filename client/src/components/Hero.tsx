@@ -1,14 +1,16 @@
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import { Download, ArrowRight } from "lucide-react";
 import profileImage from "@assets/generated_images/Professional_developer_headshot.png";
 
 interface HeroProps {
   name: string;
   title: string;
+  strengths?: string[];
   introduction: string;
 }
 
-export default function Hero({ name, title, introduction }: HeroProps) {
+export default function Hero({ name, title, strengths, introduction }: HeroProps) {
   const scrollToProjects = () => {
     const element = document.getElementById("projects");
     if (element) {
@@ -51,11 +53,25 @@ export default function Hero({ name, title, introduction }: HeroProps) {
 
         {/* Title */}
         <h2
-          className="text-xl md:text-2xl lg:text-3xl font-medium text-primary/80 mb-6 md:mb-8 dark:text-cyan-300/80"
+          className="text-xl md:text-2xl lg:text-3xl font-medium text-primary/80 mb-4 md:mb-5 dark:text-cyan-300/80"
           data-testid="text-title"
         >
           {title}
         </h2>
+
+        {strengths && strengths.length > 0 && (
+          <div className="flex flex-wrap items-center justify-center gap-2 mb-6 md:mb-8">
+            {strengths.map((strength) => (
+              <Badge
+                key={strength}
+                variant="secondary"
+                className="text-sm md:text-base px-3 py-1 font-medium neon-badge"
+              >
+                {strength}
+              </Badge>
+            ))}
+          </div>
+        )}
 
         {/* Introduction */}
         <p
