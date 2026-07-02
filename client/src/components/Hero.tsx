@@ -31,7 +31,7 @@ export default function Hero({ name, title, introduction }: HeroProps) {
       <div className="max-w-4xl mx-auto text-center">
         {/* Profile Picture */}
         <div className="mb-8 md:mb-12" data-testid="container-profile">
-          <div className="w-32 h-32 md:w-40 md:h-40 mx-auto rounded-full overflow-hidden ring-4 ring-border shadow-lg">
+          <div className="w-32 h-32 md:w-40 md:h-40 mx-auto rounded-full overflow-hidden ring-4 ring-primary/20 shadow-lg dark:ring-cyan-500/40 dark:shadow-neon-md">
             <img
               src={profileImage}
               alt={`${name} - Developer`}
@@ -43,7 +43,7 @@ export default function Hero({ name, title, introduction }: HeroProps) {
 
         {/* Name */}
         <h1
-          className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-4 md:mb-6 leading-tight"
+          className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-4 md:mb-6 leading-tight neon-heading"
           data-testid="text-name"
         >
           {name}
@@ -51,7 +51,7 @@ export default function Hero({ name, title, introduction }: HeroProps) {
 
         {/* Title */}
         <h2
-          className="text-xl md:text-2xl lg:text-3xl font-medium text-muted-foreground mb-6 md:mb-8"
+          className="text-xl md:text-2xl lg:text-3xl font-medium text-primary/80 mb-6 md:mb-8 dark:text-cyan-300/80"
           data-testid="text-title"
         >
           {title}
@@ -59,7 +59,7 @@ export default function Hero({ name, title, introduction }: HeroProps) {
 
         {/* Introduction */}
         <p
-          className="text-base md:text-lg text-foreground/80 leading-relaxed max-w-2xl mx-auto mb-8 md:mb-12"
+          className="text-base md:text-lg text-foreground/75 leading-relaxed max-w-2xl mx-auto mb-8 md:mb-12"
           data-testid="text-intro"
         >
           {introduction}
@@ -70,7 +70,7 @@ export default function Hero({ name, title, introduction }: HeroProps) {
           <Button
             size="lg"
             onClick={scrollToProjects}
-            className="w-full sm:w-auto text-base font-medium px-8"
+            className="w-full sm:w-auto text-base font-medium px-8 neon-button"
             data-testid="button-view-projects"
           >
             View Projects

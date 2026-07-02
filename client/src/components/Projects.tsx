@@ -10,27 +10,25 @@ interface ProjectsProps {
 
 export default function Projects({ projects }: ProjectsProps) {
   return (
-    <section id="projects" className="py-16 md:py-24 lg:py-32 px-6 md:px-8 bg-muted/30">
+    <section id="projects" className="py-16 md:py-24 lg:py-32 px-6 md:px-8 section-alt">
       <div className="max-w-6xl mx-auto">
-        {/* Section Header */}
         <div className="text-center mb-12 md:mb-16">
           <h2
-            className="text-3xl md:text-4xl font-bold text-foreground mb-4"
+            className="text-3xl md:text-4xl font-bold text-foreground mb-4 neon-heading"
             data-testid="heading-projects"
           >
             Featured Projects
           </h2>
           <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
-            A selection of my recent work showcasing various technologies and problem-solving approaches
+            A journey through my builds — from first CRUD app to production systems
           </p>
         </div>
 
-        {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {projects.map((project) => (
             <Card
               key={project.id}
-              className="overflow-hidden hover:shadow-xl transition-all duration-300"
+              className="overflow-hidden neon-card"
               data-testid={`card-project-${project.id}`}
             >
               <CardHeader className="space-y-2">
@@ -49,7 +47,7 @@ export default function Projects({ projects }: ProjectsProps) {
                     <Badge
                       key={index}
                       variant="secondary"
-                      className="font-mono text-xs md:text-sm"
+                      className="font-mono text-xs md:text-sm neon-badge"
                       data-testid={`badge-tech-${project.id}-${index}`}
                     >
                       {tech}
@@ -59,18 +57,23 @@ export default function Projects({ projects }: ProjectsProps) {
               </CardContent>
 
               <CardFooter className="flex flex-wrap gap-3">
-                {project.githubUrl && (
+                {project.githubUrl ? (
                   <Button
                     variant="outline"
                     size="sm"
                     asChild
                     data-testid={`button-github-${project.id}`}
+                    className="dark:border-cyan-500/30 dark:hover:border-cyan-400/60"
                   >
                     <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
                       <Github className="mr-2 w-4 h-4" />
                       GitHub
                     </a>
                   </Button>
+                ) : (
+                  <Badge variant="outline" className="text-xs text-muted-foreground dark:border-purple-500/30 dark:text-purple-300/70">
+                    No public repo
+                  </Badge>
                 )}
                 {project.demoUrl && (
                   <Button

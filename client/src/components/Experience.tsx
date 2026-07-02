@@ -8,12 +8,11 @@ interface ExperienceProps {
 
 export default function ExperienceSection({ experiences }: ExperienceProps) {
   return (
-    <section id="experience" className="py-16 md:py-24 lg:py-32 px-6 md:px-8 bg-muted/30">
+    <section id="experience" className="py-16 md:py-24 lg:py-32 px-6 md:px-8 section-alt">
       <div className="max-w-4xl mx-auto">
-        {/* Section Header */}
         <div className="text-center mb-12 md:mb-16">
           <h2
-            className="text-3xl md:text-4xl font-bold text-foreground mb-4"
+            className="text-3xl md:text-4xl font-bold text-foreground mb-4 neon-heading"
             data-testid="heading-experience"
           >
             Work Experience
@@ -26,20 +25,20 @@ export default function ExperienceSection({ experiences }: ExperienceProps) {
         {/* Experience Timeline */}
         <div className="relative space-y-8">
           {/* Timeline vertical line */}
-          <div className="absolute left-[19px] top-8 bottom-8 w-0.5 bg-border hidden md:block" />
+          <div className="absolute left-[19px] top-8 bottom-8 w-0.5 bg-primary/20 hidden md:block dark:bg-gradient-to-b dark:from-cyan-500/50 dark:to-purple-500/50" />
           
           {experiences.map((exp, index) => (
             <div key={exp.id} className="relative flex gap-6 items-start">
               {/* Timeline marker */}
               <div className="relative flex-shrink-0 hidden md:flex">
-                <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center shadow-md ring-4 ring-background z-10">
+                <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center shadow-md ring-4 ring-background z-10 dark:shadow-neon-sm dark:ring-cyan-500/30">
                   <Briefcase className="w-5 h-5 text-primary-foreground" />
                 </div>
               </div>
               
               {/* Experience card */}
               <Card
-                className="flex-1 overflow-visible hover:shadow-lg transition-shadow duration-300"
+                className="flex-1 overflow-visible neon-card"
                 data-testid={`card-experience-${exp.id}`}
               >
                 <CardHeader>

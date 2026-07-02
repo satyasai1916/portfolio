@@ -81,6 +81,24 @@ export default {
           busy: "rgb(239 68 68)",
           offline: "rgb(156 163 175)",
         },
+        neon: {
+          cyan: "#22d3ee",
+          purple: "#a855f7",
+          pink: "#f472b6",
+        },
+        calm: {
+          slate: "#3d4f5f",
+          mist: "#e8eef2",
+          sage: "#dce8e4",
+          teal: "#4a8296",
+        },
+      },
+      boxShadow: {
+        "calm-sm": "0 2px 8px rgba(61, 90, 110, 0.06)",
+        "calm-md": "0 4px 16px rgba(61, 90, 110, 0.08)",
+        "neon-sm": "0 0 12px rgba(34, 211, 238, 0.25)",
+        "neon-md": "0 0 20px rgba(34, 211, 238, 0.35), 0 0 40px rgba(168, 85, 247, 0.15)",
+        "neon-lg": "0 0 30px rgba(34, 211, 238, 0.4), 0 0 60px rgba(168, 85, 247, 0.2)",
       },
       fontFamily: {
         sans: ["var(--font-sans)"],
