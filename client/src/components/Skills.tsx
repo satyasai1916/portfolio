@@ -12,7 +12,7 @@ export default function Skills({ skillCategories }: SkillsProps) {
         {/* Section Header */}
         <div className="text-center mb-12 md:mb-16">
           <h2
-            className="text-3xl md:text-4xl font-bold text-foreground mb-4"
+            className="text-3xl md:text-4xl font-bold text-foreground mb-4 neon-heading"
             data-testid="heading-skills"
           >
             Skills & Technologies
@@ -33,7 +33,7 @@ export default function Skills({ skillCategories }: SkillsProps) {
                 {category.skills.map((skill, skillIndex) => (
                   <Card
                     key={skillIndex}
-                    className="p-6 text-center hover:shadow-md transition-shadow duration-200"
+                    className="p-6 text-center neon-card"
                     data-testid={`skill-${categoryIndex}-${skillIndex}`}
                   >
                     <p className="font-medium text-base md:text-lg text-foreground">

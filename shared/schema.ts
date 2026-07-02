@@ -1,5 +1,13 @@
 import { z } from "zod";
 
+export const userSchema = z.object({
+  id: z.string(),
+  username: z.string(),
+  password: z.string(),
+});
+
+export const insertUserSchema = userSchema.omit({ id: true });
+
 // Portfolio Data Schemas
 
 export const projectSchema = z.object({
@@ -59,6 +67,8 @@ export const portfolioDataSchema = z.object({
 });
 
 // TypeScript types
+export type User = z.infer<typeof userSchema>;
+export type InsertUser = z.infer<typeof insertUserSchema>;
 export type Project = z.infer<typeof projectSchema>;
 export type SkillCategory = z.infer<typeof skillCategorySchema>;
 export type Experience = z.infer<typeof experienceSchema>;
