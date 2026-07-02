@@ -55,6 +55,7 @@ export const blogSchema = z.object({
 export const portfolioDataSchema = z.object({
   name: z.string(),
   title: z.string(),
+  strengths: z.array(z.string()).optional(),
   introduction: z.string(),
   email: z.string().email(),
   linkedinUrl: z.string().optional(),
